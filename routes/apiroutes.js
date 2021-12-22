@@ -23,7 +23,7 @@ module.exports = function(app) {
 
 
   app.delete("/api/notes/:id", (req, res) => {
-
+ console.log(req.params)
     let noteId = req.params.id.toString();
     let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
     const newData = data.filter(note => note.id.toString() !== noteId);
